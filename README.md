@@ -32,4 +32,4 @@ If you plan to contribute to the repository, please create a `feature` branch fr
 Please see the file `LICENSE.txt` for details.
 
 # References
-Stegmann, P., E. Liu, B. Johnson (2019): Applying the Community Radiative Transfer Model to Remote Sensing and Data Assimilation. AGU Fall Meeting 2019 (Advances in Remote Sensing Inversion), Boston MA.
+Stegmann, P., E. Liu, and B. Johnson (2019): *Applying the Community Radiative Transfer Model to Remote Sensing and Data Assimilation.* AGU Fall Meeting 2019 (Advances in Remote Sensing Inversion), Boston MA.
