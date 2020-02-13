@@ -17,8 +17,8 @@ PROGRAM main
   IMPLICIT NONE
 
   ! Data Dictionary:
-  INTEGER(KIND=8), PARAMETER :: M = 92 ! AMSU-A channels
-  INTEGER(KIND=8), PARAMETER :: N = 5 ! Atmospheric pressure levels
+  INTEGER(KIND=8), PARAMETER :: M = 92 ! Atmospheric pressure levels
+  INTEGER(KIND=8), PARAMETER :: N = 5 ! AMSU-A channels
   REAL(KIND=8), DIMENSION(M,N) :: K    ! CRTM K-Matrix
   REAL(KIND=8), DIMENSION(M,N) :: s
   REAL(KIND=8), DIMENSION(M,M) :: u

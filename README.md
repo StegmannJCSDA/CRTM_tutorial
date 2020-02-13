@@ -8,7 +8,7 @@ There is a separate folder for each tutorial case:
 # Getting Started
 
 ## Requirements
-This tool requires a linked version of the CRTM library and a LAPACK version.
+This tutorial requires a linked version of the CRTM library and a LAPACK version.
 The code has been tested with CRTM REL-2.1.3 to 2.3.0.
 A Python installation with NumPy and Matplotlib modules is required for the plotting scripts.
 
