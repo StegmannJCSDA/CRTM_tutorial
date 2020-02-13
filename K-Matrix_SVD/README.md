@@ -43,6 +43,17 @@ in this folder.
 ### If something goes wrong...
 The `makefile` expects the CRTM installation to reside in `/usr/local/crtm_v2.3.0/`.
 If this is not the case for installation, you need to modify the CRTM path in the makefile accordingly.
+The `makefile` is written for the `gfortran`  compiler. If you are using a different compiler, please modify the `FCC` variable accordingly.
+
+If you are receiving the following error message:
+```bash
+Undefined symbols for architecture x86_64:
+  "_dgesvd_", referenced from:
+      _MAIN__ in main.o
+ld: symbol(s) not found for architecture x86_64
+```
+LAPACK is not linked correctly. Please check which LAPACK interface you are using (e.g. the Intel Math Kernel Library) and modify the `LIBS` variable with the appropriate linker switches.
+
 
 ## Running the computations
 This folder contains a shell script that will perform all necessary operations. You can call it with the following command:
