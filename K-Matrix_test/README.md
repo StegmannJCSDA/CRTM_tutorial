@@ -39,4 +39,4 @@ python plot.py
 ```
 This python script will read both `*.txt` output files and produce the following plot of the weighting functions:
 ![Image of AMSU-A weighting functions.]
-(https://github.com/StegmannJCSDA/CRTM_tutorial/K-Matrix_test/kmatrix_amsu-a.png)
+(./kmatrix_amsu-a.png)
