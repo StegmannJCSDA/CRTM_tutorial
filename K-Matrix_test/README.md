@@ -14,8 +14,8 @@ With this out of the way, the desired instrument can be selected:
 Sensor_Id = 'amsua_metop-a'
 ...
 Error_Status = CRTM_Init( (/Sensor_Id/), &  ! Input... must be an array, hence the (/../)
-ChannelInfo  , &  ! Output
-File_Path='coefficients/' )
+                         ChannelInfo  , &  ! Output
+                         File_Path='coefficients/' )
 ```
 Atmosphere and surface data are loaded externally for this test case:
 ```Fortran
@@ -47,13 +47,13 @@ END DO
 The full K-matrix is then computed by calling:
 ```Fortran
 Error_Status = CRTM_K_Matrix( Atm         , &
-                Sfc         , &
-                RTSolution_K, &
-                Geometry    , &
-                ChannelInfo , &
-                Atmosphere_K, &
-                Surface_K   , &
-                RTSolution  )
+                              Sfc         , &
+                              RTSolution_K, &
+                              Geometry    , &
+                              ChannelInfo , &
+                              Atmosphere_K, &
+                              Surface_K   , &
+                              RTSolution  )
 ```
 After the computation, the Jacobian is stored in the `Atmosphere_K` datastructure of type `CRTM_Atmosphere_type`.
 Writing the Jacobian of the channel brightness temperatures w.r.t. the atmospheric temperature profile for channels 6 to 10 to `output_K.txt` can then be achieved like so:
