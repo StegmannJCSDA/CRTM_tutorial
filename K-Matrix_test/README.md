@@ -1,5 +1,9 @@
 # Short Description
 This tutorial demonstrates how to use the CRTM to compute the Jacobian matrix (or K-matrix) for an example test case involving AMSU-A.
+The so-called K-Matrix, or Jacobian is used in linear(-ized) retrieval problems to relate the measurement vector `y` to the state vector `x`:
+```Fortran
+y = MATMUL(K,x)
+```
 
 # Running the test case
 Below is a walkthrough for all the steps of this tutorial case.
@@ -25,4 +29,13 @@ to remove the existing output files, and then
 ```
 ./K.x
 ```
-to run the actual executable for this example.
+to run the actual executable for this example. This will produce two output text files called *output_K.txt* and *output_P.txt* 
+The first file contains the computed K-matrix, while the second file contains the atmospheric pressure profile upon which the computation is based.
+
+## Plotting the results
+In order to plot the resuts, simply type:
+```
+python plot.py
+```
+This python script will read both `*.txt` output files and produce the following plot of the weighting functions:
+![Image of AMSU-A weighting functions.](kmatrix_amsu-a.png)
