@@ -8,14 +8,18 @@ The singular value decomposition of the Jacobian has the following form:
 ``` Fortran
 K = U * S * V'
 ```
-where `K` is the Jacobian, `S` is the diagonal matrix of singular values, and `U` and `V` are the matrices composed of the left and right singular vectors respectively.
-
-To start, the Fortran code loads the Jacobian from `output_K.txt`, which contains the results from the previous run in `../K-Matrix_test`:
+where `K` is the Jacobian, `S` is the diagonal matrix of singular values, and `U` and `V` are the matrices composed of the left and right singular vectors respectively. To start, the Fortran code loads the Jacobian from `output_K.txt`, which contains the results from the previous run in `../K-Matrix_test`:
 ```Fortran
 ! Read in the K-Matrix for all AMSU-A channels:
 OPEN(66,FILE='output_K.txt',STATUS='OLD')
 READ(66,*) K
 CLOSE(66)
+```
+The Jacobian can be conveniently stored as a regular Fortran array of type `REAL`:
+```Fortran
+INTEGER(KIND=8), PARAMETER :: M = 92 ! Atmospheric pressure levels
+INTEGER(KIND=8), PARAMETER :: N = 5 ! AMSU-A channels
+REAL(KIND=8), DIMENSION(M,N) :: K    ! CRTM K-Matrix
 ```
 Subsequently, the `DGESVD` `SUBROUTINE` from LAPACK is used to compute the singular value decomposition of `K`:
 ```Fortran
