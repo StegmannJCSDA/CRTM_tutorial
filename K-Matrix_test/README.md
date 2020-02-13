@@ -1,5 +1,9 @@
 # Short Description
 This tutorial demonstrates how to use the CRTM to compute the Jacobian matrix (or K-matrix) for an example test case involving AMSU-A.
+The so-called K-Matrix, or Jacobian is used in linear(-ized) retrieval problems to relate the measurement vector `y` to the state vector `x`:
+```
+y = K*x
+```
 
 # Running the test case
 Below is a walkthrough for all the steps of this tutorial case.
