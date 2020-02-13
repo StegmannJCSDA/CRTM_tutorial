@@ -1,5 +1,5 @@
 # Short Description
-This tutorial provides a very short example how the K-matrix result computed with the CRTM in the `CRTM_tutorial/K-Matrix_test` folder can be further processed.
+This tutorial provides a very short example of how the K-matrix result computed by the CRTM in the `CRTM_tutorial/K-Matrix_test` folder can be further processed.
 The aim of the test case here is to compute and plot the **singular values** and **singular vectors** of the **K-matrix** for further analysis.
 Such a decomposition of the matrix can be used to e.g. identify the *null space* and the *row space* of the sounding measurement.
 
@@ -50,8 +50,9 @@ This folder contains a shell script that will perform all necessary operations. 
 ./run.sh
 ```
 This will produce two output text files:
-- `SVD_result.txt`
--`Singular_vectors.txt`
+- `SVD_result.txt`: Singular values of the K-matrix
+- `Singular_vectors.txt`: Singular vectors of the K-matrix
+Both text files serve as the input for the plotting script `plot.py`.
 
 ## Plotting the results
 In order to plot the resuts, simply type:
