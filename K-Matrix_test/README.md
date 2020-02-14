@@ -80,6 +80,7 @@ in this folder.
 ### If something goes wrong...
 The `makefile` expects the CRTM installation to reside in `/usr/local/crtm_v2.3.0/`.
 If this is not the case for installation, you need to modify the CRTM path in the makefile accordingly.
+The `makefile` is written for the `gfortran`  compiler. If you are using a different compiler, please modify the `FCC` variable accordingly.
 
 ## Running the computations
 If the compilation was successful, an executable called `K.x` is created.
