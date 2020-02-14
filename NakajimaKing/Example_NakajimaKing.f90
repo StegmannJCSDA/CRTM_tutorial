@@ -192,8 +192,6 @@ PROGRAM Example_NakajimaKing
 
   ! 4a. Atmosphere and Surface input
   ! --------------------------------
-  !CALL Load_Atm_Data()
-  !CALL Load_Sfc_Data()
   CALL Load_AtmSfc_Data()
 
   ! 4c. Option input
@@ -220,18 +218,11 @@ PROGRAM Example_NakajimaKing
   ! on the default Re (earth radius) and h (satellite height)
   ! Satellite ZENITH_ANGLE will go from 90 to -90 degrees
   ZENITH_ANGLE = 45.0_fp
-  !REAL(fp), PARAMETER :: SCAN_ANGLE   = 26.37293341421_fp
   SCAN_ANGLE   = 1.0_fp ! Creates the field of view
   ! Update satellite view geometry.
   CALL CRTM_Geometry_SetValue( Geometry, &
                                Sensor_Zenith_Angle = ZENITH_ANGLE, &
                                Sensor_Scan_Angle   = SCAN_ANGLE )
-
-! zenith_angle_loop: DO ii = 0, 80 ! zenith angle intervals
-  WRITE(*,*) "Zenith Angle: "
-  WRITE(*,*) ZENITH_ANGLE 
-  ! March the zenith angle forward in 5 degree steps
-  ZENITH_ANGLE = ZENITH_ANGLE - 1.0_fp
 
   ! Update satellite view geometry.
   CALL CRTM_Geometry_SetValue( Geometry, &
@@ -287,7 +278,7 @@ PROGRAM Example_NakajimaKing
 
   
   ! Write solution radiances to file output.txt
-  open(111, file='output.txt', access='append')
+  OPEN(111, FILE='output.txt', ACCESS='APPEND')
 
   DO m = 1, N_PROFILES
     !WRITE(111,*) 'Hi'
@@ -372,11 +363,8 @@ CONTAINS
     Atm(10*mm + nn)%Cloud(1)%Type = SNOW_CLOUD
     Atm(10*mm + nn)%Cloud(1)%Effective_Radius(k1:k2) = &
         (/1.5_fp + mm*1.0_fp/)  ! microns
-     ! (/20.14_fp, 19.75_fp, 12.49_fp, 11.17_fp/)  ! microns
     Atm(10*mm + nn)%Cloud(1)%Water_Content(k1:k2) = &
     	(/0.06_fp + (nn-1)*0.01_fp/) ! kg/m^2
-        !(/10._fp/) ! kg/m^2
-      !(/5.09_fp, 3.027_fp, 1.56_fp, 2.01_fp/) ! kg/m^2
 
     ! Level pressure (mb)
     Atm(10*mm + nn)%Level_Pressure = (/&

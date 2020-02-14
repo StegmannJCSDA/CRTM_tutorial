@@ -8,7 +8,7 @@ There is a separate folder for each tutorial case:
 # Getting Started
 
 ## Requirements
-This tool requires a linked version of the CRTM library and a LAPACK version.
+This tutorial requires a linked version of the CRTM library and a LAPACK version.
 The code has been tested with CRTM REL-2.1.3 to 2.3.0.
 A Python installation with NumPy and Matplotlib modules is required for the plotting scripts.
 
@@ -32,4 +32,8 @@ If you plan to contribute to the repository, please create a `feature` branch fr
 Please see the file `LICENSE.txt` for details.
 
 # References
-Stegmann, P., E. Liu, and B. Johnson (2019): *Applying the Community Radiative Transfer Model to Remote Sensing and Data Assimilation.* AGU Fall Meeting 2019 (Advances in Remote Sensing Inversion), Boston MA.
+[1] Stegmann, P., E. Liu, and B. Johnson (2019): *Applying the Community Radiative Transfer Model to Remote Sensing and Data Assimilation.* AGU Fall Meeting 2019 (Advances in Remote Sensing Inversion), Boston MA.
+
+[2] Rodgers, C. D. (2000): *Inverse Methods for Atmospheric Sounding: Theory and Practice*. World Scientific Singapore.
+
+[3] Nakajima T., and M. D. King (1990): *Determination of Optical Thickness and Effective Particle Radius of Clouds from Reflected Solar Radiation Measurements. Part I: Theory.* JAS 47(15), 1878-1893.
